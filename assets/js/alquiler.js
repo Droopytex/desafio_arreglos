@@ -101,50 +101,42 @@ btn.addEventListener("click", () => {
   allcards = "";
   for (const alquiler of propiedades_alquiler) {
     allcards += `
-              <div class="col-md-4 mb-4">
-              <div class="card">
-                <img
-                  src="${alquiler.src}"
-                  class="card-img-top"
-                  alt="Imagen del departamento"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    ${alquiler.nombre}
-                  </h5>
-                  <p class="card-text">
-                  ${alquiler.descripcion}
-                  </p>
-                  <p>
-                    <i class="fas fa-map-marker-alt"></i> ${alquiler.ubicacion}
-                  </p>
-                  <p>
-                    <i class="fas fa-bed"></i> ${
-                      alquiler.habitaciones
-                    } Habitaciones |
-                    <i class="fas fa-bath"></i> ${alquiler.bathroom} Baños
-                  </p>
-                  <p><i class="fas fa-dollar-sign"></i> ${
-                    alquiler.costo * 1000
-                  }</p>
-                  <div class="container-fumar">
-                  ${
-                    alquiler.smoke
-                      ? `<p class="text-success"><i class="fas fa-smoking"></i> Permitido fumar</p>`
-                      : `<p class="text-danger"><i class="fas fa-smoking-ban"></i> No se permite fumar</p>`
-                  }
-                  </div>
-                  <div class="container-mascotas">
-                  ${
-                    alquiler.pets
-                      ? `<p class="text-success"><i class="fas fa-smoking"></i> Permitido fumar</p>`
-                      : `<p class="text-danger"><i class="fas fa-smoking-ban"></i> No se permite fumar</p>`
-                  }
-                  </div>
-                </div>
-              </div>
-            </div>
-                `;
+<div class="col-md-4 mb-4">
+<div class="card">
+<img
+src="${alquiler.src}"
+class="card-img-top"
+alt="Imagen del departamento"
+/>
+<div class="card-body">
+ <h5 class="card-title">${alquiler.nombre}
+ </h5>
+ <p class="card-text">${alquiler.descripcion}
+</p>
+<p>
+<i class="fas fa-map-marker-alt"></i> ${alquiler.ubicacion}</p>
+<p><i class="fas fa-bed"></i> ${alquiler.habitaciones} Habitaciones |
+<i class="fas fa-bath"></i> ${alquiler.bathroom} Baños
+</p>
+<p><i class="fas fa-dollar-sign"></i> ${alquiler.costo * 1000}</p>
+<div class="container-fumar">
+${
+  alquiler.smoke
+    ? `<p class="text-success"><i class="fas fa-smoking"></i> Permitido fumar</p>`
+    : `<p class="text-danger"><i class="fas fa-smoking-ban"></i> No se permite fumar</p>`
+}
+ </div>
+
+<div class="container-mascotas">${
+      alquiler.pets
+        ? `<p class="text-success"><i class="fas fa-smoking"></i> Permitido fumar</p>`
+        : `<p class="text-danger"><i class="fas fa-smoking-ban"></i> No se permite fumar</p>`
+    }
+ </div>
+ </div>
+  </div>
+</div>
+ `;
   }
 
   card.innerHTML = allcards;
